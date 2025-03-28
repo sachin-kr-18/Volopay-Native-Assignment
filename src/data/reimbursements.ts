@@ -4,11 +4,8 @@ export interface Reimbursement {
     amount: string;
     currency: string;
     status: string;
-    initials: string;
-    color: string;
-    statusColor: string;
-  }
-  
+}
+
 const reimbursements: Reimbursement[] = [
     {
         id: '1',
@@ -16,9 +13,6 @@ const reimbursements: Reimbursement[] = [
         amount: '9,900 SGD',
         currency: 'SGD',
         status: 'Approved',
-        initials: 'wa',
-        color: 'rgb(51, 31, 128)',
-        statusColor: 'rgb(46, 204, 113)',
     },
     {
         id: '2',
@@ -26,9 +20,6 @@ const reimbursements: Reimbursement[] = [
         amount: '5,100 SGD',
         currency: 'SGD',
         status: 'Approval Pending',
-        initials: 'Am',
-        color: 'rgb(120, 53, 15)',
-        statusColor: 'rgb(255, 165, 0)',
     },
     {
         id: '3',
@@ -36,9 +27,6 @@ const reimbursements: Reimbursement[] = [
         amount: '6,300 SGD',
         currency: 'SGD',
         status: 'Approved',
-        initials: 'Go',
-        color: 'rgb(66, 133, 244)',
-        statusColor: 'rgb(46, 204, 113)',
     },
     {
         id: '4',
@@ -46,9 +34,6 @@ const reimbursements: Reimbursement[] = [
         amount: '200 SGD',
         currency: 'SGD',
         status: 'Draft',
-        initials: 'Gr',
-        color: 'rgb(16, 24, 39)',
-        statusColor: 'rgb(255, 165, 0)',
     },
     {
         id: '5',
@@ -56,9 +41,6 @@ const reimbursements: Reimbursement[] = [
         amount: '600 SGD',
         currency: 'SGD',
         status: 'Approved',
-        initials: 'Py',
-        color: 'rgb(0, 123, 255)',
-        statusColor: 'rgb(46, 204, 113)',
     },
     {
         id: '6',
@@ -66,9 +48,6 @@ const reimbursements: Reimbursement[] = [
         amount: '1,200 SGD',
         currency: 'SGD',
         status: 'Approved',
-        initials: 'Ub',
-        color: 'rgb(34, 139, 34)',
-        statusColor: 'rgb(26, 188, 156)',
     },
     {
         id: '7',
@@ -76,9 +55,6 @@ const reimbursements: Reimbursement[] = [
         amount: '800 SGD',
         currency: 'SGD',
         status: 'Draft',
-        initials: 'Ne',
-        color: 'rgb(220, 20, 60)',
-        statusColor: 'rgb(230, 126, 34)',
     },
     {
         id: '8',
@@ -86,9 +62,6 @@ const reimbursements: Reimbursement[] = [
         amount: '3,500 SGD',
         currency: 'SGD',
         status: 'Approval Pending',
-        initials: 'Ap',
-        color: 'rgb(0, 0, 0)',
-        statusColor: 'rgb(255, 165, 0)',
     },
     {
         id: '9',
@@ -96,9 +69,6 @@ const reimbursements: Reimbursement[] = [
         amount: '7,800 SGD',
         currency: 'SGD',
         status: 'Approval Pending',
-        initials: 'Fb',
-        color: 'rgb(59, 89, 152)',
-        statusColor: 'rgb(255, 165, 0)',
     },
     {
         id: '10',
@@ -106,9 +76,6 @@ const reimbursements: Reimbursement[] = [
         amount: '2,100 SGD',
         currency: 'SGD',
         status: 'Approved',
-        initials: 'Ms',
-        color: 'rgb(0, 120, 215)',
-        statusColor: 'rgb(26, 188, 156)',
     },
     {
         id: '11',
@@ -116,9 +83,6 @@ const reimbursements: Reimbursement[] = [
         amount: '4,500 SGD',
         currency: 'SGD',
         status: 'Draft',
-        initials: 'Te',
-        color: 'rgb(255, 99, 71)',
-        statusColor: 'rgb(255, 165, 0)',
     },
     {
         id: '12',
@@ -126,9 +90,6 @@ const reimbursements: Reimbursement[] = [
         amount: '1,800 SGD',
         currency: 'SGD',
         status: 'Approved',
-        initials: 'Sp',
-        color: 'rgb(30, 215, 96)',
-        statusColor: 'rgb(46, 204, 113)',
     },
     {
         id: '13',
@@ -136,9 +97,6 @@ const reimbursements: Reimbursement[] = [
         amount: '3,200 SGD',
         currency: 'SGD',
         status: 'Approval Pending',
-        initials: 'Ad',
-        color: 'rgb(255, 0, 0)',
-        statusColor: 'rgb(255, 165, 0)',
     },
     {
         id: '14',
@@ -146,9 +104,6 @@ const reimbursements: Reimbursement[] = [
         amount: '2,700 SGD',
         currency: 'SGD',
         status: 'Draft',
-        initials: 'Sl',
-        color: 'rgb(74, 20, 140)',
-        statusColor: 'rgb(255, 165, 0)',
     },
     {
         id: '15',
@@ -156,9 +111,6 @@ const reimbursements: Reimbursement[] = [
         amount: '900 SGD',
         currency: 'SGD',
         status: 'Approved',
-        initials: 'Zo',
-        color: 'rgb(0, 122, 255)',
-        statusColor: 'rgb(46, 204, 113)',
     },
 ];
   
