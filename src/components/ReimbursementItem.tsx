@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-
+import { getInitials, getRandomColor } from '../utils/common';
+                                                                              
 interface ReimbursementItemProps {
   item: {
     id: string;
@@ -8,9 +9,6 @@ interface ReimbursementItemProps {
     amount: string;
     currency: string;
     status: string;
-    initials: string;
-    color: string;
-    statusColor: string;
   };
 }
 
@@ -27,12 +25,18 @@ const ReimbursementItem: React.FC<ReimbursementItemProps> = ({ item }) => {
         return '#888888';
     }
   };
+  
+
+  const initials = getInitials(item.merchant);
+  const backgroundColor = `rgb(${getRandomColor(item.merchant)})`;
+
+  
 
   return (
     <View style={styles.itemContainer}>
       <View style={styles.leftSection}>
-        <View style={[styles.icon, { backgroundColor: item.color }]}>
-          <Text style={styles.iconText}>{item.initials}</Text>
+      <View style={[styles.icon, { backgroundColor }]}>
+          <Text style={styles.iconText}>{initials}</Text>
         </View>
         <View style={styles.details}>
           <Text style={styles.merchant}>{item.merchant}</Text>
@@ -43,15 +47,11 @@ const ReimbursementItem: React.FC<ReimbursementItemProps> = ({ item }) => {
       </View>
       <View style={styles.rightSection}>
         <Text style={styles.amount}>{item.amount}</Text>
-        {item.currency !== 'SGD' && (
-          <Text style={styles.usdAmount}>
-            {(parseFloat(item.amount.replace(/[^0-9.-]+/g, '')) * 0.93).toFixed(0)} USD
-          </Text>
-        )}
       </View>
     </View>
   );
 };
+
 
 const styles = StyleSheet.create({
   itemContainer: {
