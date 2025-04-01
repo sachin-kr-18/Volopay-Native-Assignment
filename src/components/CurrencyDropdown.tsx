@@ -1,19 +1,14 @@
 import React from 'react';
 import RNPickerSelect from 'react-native-picker-select';
 import { StyleSheet } from 'react-native';
+import { currency } from '../constants/common';
 
 interface CurrencyDropdownProps {
   selectedCurrency: string;
   onCurrencyChange: (value: string) => void;
 }
 
-const currency = [
-    { value: 'INR', label: 'INR' },
-    { value: 'USD', label: 'USD' },
-    { value: 'SGD', label: 'SGD' },
-    { value: 'IDR', label: 'IDR' },
-    { value: 'AUD', label: 'AUD' },
-  ];
+
 const CurrencyDropdown: React.FC<CurrencyDropdownProps> = ({
   selectedCurrency,
   onCurrencyChange,

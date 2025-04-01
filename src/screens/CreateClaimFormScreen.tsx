@@ -10,7 +10,6 @@ import { useReimbursements } from '../context/ReimbursementContext';
 const CreateClaimFormScreen: React.FC = () => {
   const navigation = useNavigation();
   const { addReimbursement } = useReimbursements();
-  // const [receiptUri, setReceiptUri] = useState<string | null>(null);
   interface Receipt {
     uri: string;
     name?: string;
@@ -37,12 +36,12 @@ const CreateClaimFormScreen: React.FC = () => {
       } else if (response.errorMessage) {
         console.log('ImagePicker Error: ', response.errorMessage);
       } 
-      else if (response.assets && response.assets.length > 0) {
-        const newReceipts: Receipt[] = response.assets.map(asset => ({
+      else if (response.assets && response.assets?.length ) {
+        const newReceipts: Receipt[] = response.assets?.map(asset => ({
           uri: asset.uri || '',
-          name: asset.fileName,
-          type: asset.type,
-          size: asset.fileSize,
+          name: asset.fileName || 'unknown',
+          type: asset.type || 'unknown',
+          size: asset.fileSize || 0,
         }));
         
         setReceipts([...receipts, ...newReceipts]);
@@ -76,7 +75,6 @@ const CreateClaimFormScreen: React.FC = () => {
   const handleSaveAsDraft = () => {
     if (!validateForm()) return;
     
-    
     addReimbursement({
       merchant: merchant,
       amount: `${amount} ${currency}`,
@@ -109,9 +107,9 @@ const CreateClaimFormScreen: React.FC = () => {
     <View style={styles.container}>
       <Text style={styles.header}>Receipt(s)</Text>
       <View style={[styles.uploadContainer, { marginBottom: 28 }]}>
-  {receipts.length > 0 ? (
+  {receipts.length ?(
     <View style={styles.receiptsContainer}>
-      {receipts.map((receipt, index) => (
+      {receipts?.map((receipt, index) => (
         <View key={index} style={styles.receiptThumbnailContainer}>
           <Image source={{ uri: receipt.uri }} style={styles.receiptThumbnail} />
         </View>
@@ -161,7 +159,7 @@ const CreateClaimFormScreen: React.FC = () => {
       <Text style={styles.label}>Transaction Date</Text>
       <TouchableOpacity onPress={() => setShowDatePicker(true)} style={styles.datePicker}>
         <Text style={styles.dateText}>
-          {transactionDate ? transactionDate.toLocaleDateString() : 'Select date'}
+          {transactionDate?.toLocaleDateString() || 'Select date'}
         </Text>
       </TouchableOpacity>
 

@@ -23,7 +23,10 @@ const ReimbursementListScreen: React.FC = () => {
   }, [searchQuery, reimbursements]);
 
   const handleAddClaim = () => {
-    navigation.navigate('CreateClaimForm');
+    navigation.navigate({
+      name: "CreateClaimForm",
+      params: {} 
+    });
   };
 
   const EmptyListComponent = () => (

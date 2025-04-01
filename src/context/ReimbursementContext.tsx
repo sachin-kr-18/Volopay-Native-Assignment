@@ -28,7 +28,7 @@ export const ReimbursementProvider: React.FC<{ children: ReactNode }> = ({ child
 
 export const useReimbursements = () => {
     const context = useContext(ReimbursementContext);
-    if (context === undefined) {
+    if (!context) {
       throw new Error('useReimbursements must be used within a ReimbursementProvider');
     }
     return context;
